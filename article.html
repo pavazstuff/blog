@@ -1,0 +1,71 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+	<h1>Coffee Web Site</h1>
+	<p>A place where talk about actually news.</p>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-8">
+			<h3 id="title"><?= $row['entrada'] ?></h3>
+			<div class="row">
+				<div class="col-sm-3"><p class="text-muted"><?= $row['fecha'] ?></p></div>
+				<div class="col-sm-6"></div>
+				<div class="col-sm-3"><a href="index.php">Back to home</a> </div>
+			</div><p style="white-space:pre-wrap"><?= $row['publicacion'] ?></p>
+			<p class="text-muted">Tags: <?= $row['etiquetas'] ?></p>
+
+			<div id="disqus_thread"></div>
+			<script>
+			/**
+			*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+			*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+			/*
+			var disqus_config = function () {
+			this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+			this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+			};
+			*/
+			(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = '//coffeeee.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+			})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+		</div>
+		<div class="col-sm-2">
+			<div class="row">
+				<div class="col-sm-12"><h3>Content</h3></div>
+			</div>
+			<?php include 'lateral.php' ?>
+		</div>
+		<div class="col-sm-1">
+			<!-- aqui los scripts -->
+			<?php include 'scripts.php' ?>
+		</div>
+	</div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<script id="dsq-count-scr" src="//coffeeee.disqus.com/count.js" async></script>
+</body>
+</html>
